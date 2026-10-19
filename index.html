@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ဂျပန် - မြန်မာ ဝေါဟာရများ 一覧</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 20%, #1a2742 0%, #0d1527 100%), #0d1527;
+      font-family: 'Noto Sans Myanmar', 'Noto Sans JP', sans-serif;
+      color: #ffffff;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 780px;
+      background: rgba(13, 23, 44, 0.88);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      padding: 32px 24px;
+      overflow: hidden;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #FDE047;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: #94A3B8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    thead th {
+      background: rgba(26, 46, 77, 0.95);
+      color: #38BDF8;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      padding: 14px 16px;
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.35);
+      text-transform: uppercase;
+    }
+
+    /* Category Row */
+    .category-row td {
+      background: rgba(20, 35, 62, 0.98);
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FCD34D;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cat-badge {
+      display: inline-block;
+      background: #F59E0B;
+      color: #0F172A;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* Word Data Row */
+    .data-row td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      vertical-align: middle;
+    }
+
+    .data-row:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .data-row:hover {
+      background: rgba(56, 189, 248, 0.05);
+      transition: background 0.2s ease;
+    }
+
+    .furigana {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px;
+      color: #93C5FD;
+      display: block;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .kanji {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+    }
+
+    .en-meaning {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #E2E8F0;
+    }
+
+    .mm-meaning {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #CBD5E1;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      color: #64748B;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 10px;
+      }
+      .container {
+        padding: 20px 14px;
+      }
+      .header h1 {
+        font-size: 22px;
+      }
+      .kanji {
+        font-size: 18px;
+      }
+      .en-meaning, .mm-meaning {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>ဂျပန် - မြန်မာ ဝေါဟာရများ 一覧 (Table)</h1>
+      <p>Vocabulary List &bull; Kanji / Furigana / EN / MM</p>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 33%;">Kanji / Furigana</th>
+            <th style="width: 31%;">English</th>
+            <th style="width: 36%;">မြန်မာအဓိပ္ပာယ်</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. 植 -->
+          <tr class="category-row">
+            <td colspan="3">
+              <span class="cat-badge">植</span> plant &mdash; အပင် / စိုက်ပျိုးခြင်း
+            </td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">うえきばち</span>
+              <span class="kanji">植木鉢</span>
+            </td>
+            <td class="en-meaning">flowerpot</td>
+            <td class="mm-meaning">ပန်းအိုး / သစ်ပင်စိုက်အိုး</td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">たうえ</span>
+              <span class="kanji">田植え</span>
+            </td>
+            <td class="en-meaning">rice planting</td>
+            <td class="mm-meaning">စပါးစိုက်ပျိုးခြင်း / ကောက်စိုက်ခြင်း</td>
+          </tr>
+
+          <!-- 2. 息 -->
+          <tr class="category-row">
+            <td colspan="3">
+              <span class="cat-badge">息</span> breath &mdash; အသက်ရှူခြင်း / အမော
+            </td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">いきぐるしい</span>
+              <span class="kanji">息苦しい</span>
+            </td>
+            <td class="en-meaning">suffocate / short of breath</td>
+            <td class="mm-meaning">အသက်ရှူကျပ်သော / မွန်းကျပ်သော</td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">ひといきつく</span>
+              <span class="kanji">一息つく</span>
+            </td>
+            <td class="en-meaning">take a break</td>
+            <td class="mm-meaning">အမောဖြေသည် / ခေတ္တအနားယူသည်</td>
+          </tr>
+
+          <!-- 3. 義 -->
+          <tr class="category-row">
+            <td colspan="3">
+              <span class="cat-badge">義</span> justice &mdash; တရားမျှတမှု / အဓိပ္ပာယ်
+            </td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">いぎ</span>
+              <span class="kanji">意義</span>
+            </td>
+            <td class="en-meaning">significance</td>
+            <td class="mm-meaning">အဓိပ္ပာယ် / အနှစ်သာရ / တန်ဖိုး</td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">〜しゅぎ</span>
+              <span class="kanji">〜主義</span>
+            </td>
+            <td class="en-meaning">-ism</td>
+            <td class="mm-meaning">ဝါဒ (ဥပမာ- ဒီမိုကရေစီဝါဒ)</td>
+          </tr>
+
+          <!-- 4. 質 -->
+          <tr class="category-row">
+            <td colspan="3">
+              <span class="cat-badge">質</span> quality &mdash; အရည်အသွေး / သဘာဝ
+            </td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">そしつ</span>
+              <span class="kanji">素質</span>
+            </td>
+            <td class="en-meaning">potential</td>
+            <td class="mm-meaning">မွေးရာပါအရည်အသွေး / ပါရမီ</td>
+          </tr>
+          <tr class="data-row">
+            <td>
+              <span class="furigana">ししつ</span>
+              <span class="kanji">資質</span>
+            </td>
+            <td class="en-meaning">qualities</td>
+            <td class="mm-meaning">အရည်အချင်း / အရည်အသွေး</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      Japanese - Myanmar Vocabulary Table List
+    </div>
+  </div>
+
+</body>
+</html>
